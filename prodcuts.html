@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>產品列表 - 亞之騰有限公司</title>
+  <meta name="description" content="瀏覽亞之騰有限公司所有消防宣導品、禮品、紀念品。">
+  <!-- Inline CSS -->
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Microsoft JhengHei',sans-serif;color:#333;background:#f9fafb;line-height:1.6;}
+    .container{max-width:1200px;margin:0 auto;padding:0 20px;}
+    header{background:#fff;box-shadow:0 2px 10px rgba(0,0,0,0.1);position:sticky;top:0;z-index:1000;}
+    nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 0;}
+    .logo{font-size:1.8rem;color:#2c5aa0;}
+    .nav-links{display:flex;list-style:none;gap:2rem;}
+    .nav-links a{text-decoration:none;color:#333;font-weight:500;transition:color .3s;}
+    .nav-links a:hover{color:#2c5aa0;}
+    .mobile-menu{display:none;cursor:pointer;flex-direction:column;}
+    .mobile-menu span{width:25px;height:3px;background:#333;margin:3px 0;}
+    .breadcrumb{background:#f3f4f6;padding:1rem 0;margin-bottom:1rem;}
+    .breadcrumb p{color:#4b5563;font-size:.9rem;}
+    .products-list h2{font-size:1.75rem;color:#2c5aa0;margin-bottom:1rem;}
+    .sort{text-align:right;margin-bottom:1rem;}
+    .sort select{padding:.5rem;}
+    .products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;}
+    .product-card{background:#fff;border-radius:8px;overflow:hidden;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.1);transition:transform .3s,box-shadow .3s;}
+    .product-card:hover{transform:translateY(-5px);box-shadow:0 8px 16px rgba(0,0,0,0.15);}
+    .product-card img{width:100%;height:auto;display:block;}
+    .product-card h3{padding:1rem;font-size:1.1rem;color:#1f2937;}
+    footer{background:#1a1a1a;color:#fff;text-align:center;padding:2rem 0;}
+    @media(max-width:768px){.nav-links{display:none;position:absolute;top:100%;left:0;width:100%;background:#fff;flex-direction:column;padding:2rem;box-shadow:0 5px 20px rgba(0,0,0,0.1);} .nav-links.active{display:flex;} .mobile-menu{display:flex;} .products-grid{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="container">
+      <div class="logo">亞之騰有限公司</div>
+      <ul class="nav-links">
+        <li><a href="index.html">首頁</a></li>
+        <li><a class="active" href="products.html">產品</a></li>
+        <li><a href="#features">特色</a></li>
+        <li><a href="#contact">聯絡我們</a></li>
+      </ul>
+      <div class="mobile-menu" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+  </header>
+
+  <section class="breadcrumb container">
+    <p>首頁 &gt; 產品</p>
+  </section>
+
+  <section class="products-list container">
+    <h2>所有產品</h2>
+    <div class="sort">
+      <label for="sort-select">預設排序：</label>
+      <select id="sort-select">
+        <option value="default">預設排序</option>
+        <option value="price-asc">價格：由低到高</option>
+        <option value="price-desc">價格：由高到低</option>
+      </select>
+    </div>
+    <div class="products-grid">
+      <article class="product-card">
+        <img src="assets/product1.jpg" alt="錶型 防身警報器">
+        <h3>錶型 防身警報器</h3>
+      </article>
+      <article class="product-card">
+        <img src="assets/product2.jpg" alt="貓頭鷹警報器暨數位學生悠遊卡">
+        <h3>貓頭鷹警報器暨數位學生悠遊卡</h3>
+      </article>
+      <!-- 更多卡片 -->
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 亞之騰有限公司. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // 以下保留 script.js 內容
+    function toggleMenu(){document.querySelector('.nav-links').classList.toggle('active');}
+    document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});document.querySelector('.nav-links').classList.remove('active');}));
+    const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:.1});document.querySelectorAll('.fade-in').forEach(el=>io.observe(el));
+    window.addEventListener('scroll',()=>{const h=document.querySelector('header');if(window.scrollY>100){h.style.background='rgba(255,255,255,0.95)';h.style.backdropFilter='blur(10px)';}else{h.style.background='#fff';h.style.backdropFilter='none';}});
+    function trackEvent(a,l){console.log(`Track: ${a} - ${l}`);}document.querySelectorAll('.btn').forEach(b=>b.addEventListener('click',()=>trackEvent('click',b.textContent)));document.querySelectorAll('a[href^="tel:"],a[href^="mailto:"]').forEach(l=>l.addEventListener('click',()=>trackEvent('contact',l.href)));
+  </script>
+</body>
+</html>
+
