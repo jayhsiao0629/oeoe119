@@ -1,7 +1,7 @@
 title: "亞之騰有限公司"
 description: "消防宣導品、禮品、紀念品 線上預覽"
 baseurl: ""        # GitHub Pages 通常留空
-url: "https://<your-username>.github.io/<repo>"
+url: "https://jayhsiao0629.github.io/oeoe119"
 
 plugins:
   - jekyll-sitemap
