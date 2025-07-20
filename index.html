@@ -1,16 +1,618 @@
----
-title: 商品一覽
-layout: default
----
-<h1>商品一覽</h1>
-<section class="grid">
-  {% for item in site.data.products %}
-    <article class="product-card">
-      <a href="{{ '/products/' | append: item.slug | append: '.html' | relative_url }}">
-        <img src="{{ item.image }}" alt="{{ item.title }}">
-        <h2>{{ item.title }}</h2>
-        <p>{{ item.description }}</p>
-      </a>
-    </article>
-  {% endfor %}
-</section>
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>亞之騰有限公司 - 消防宣導品、禮品、紀念品專業製造商 | 錶型防身警報器</title>
+    <meta name="description" content="亞之騰有限公司專業製造消防宣導品、禮品、紀念品。提供錶型防身警報器、貓頭鷹警報器、CPR安妮造型節拍警報器等創新安全產品，台灣設計製造，消防局宣導商品首選。">
+    <meta name="keywords" content="消防宣導品,防身警報器,錶型警報器,貓頭鷹警報器,CPR安妮,消防禮品,紀念品,台灣製造,消防局宣導,安全產品">
+    <meta name="author" content="亞之騰有限公司">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourusername.github.io/fire-safety-products/">
+    <meta property="og:title" content="亞之騰有限公司 - 消防宣導品、禮品、紀念品專業製造商">
+    <meta property="og:description" content="台灣專業製造消防宣導品，提供創新錶型防身警報器、貓頭鷹警報器等安全產品">
+    <meta property="og:image" content="https://yourusername.github.io/fire-safety-products/images/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yourusername.github.io/fire-safety-products/">
+    <meta property="twitter:title" content="亞之騰有限公司 - 消防宣導品專業製造商">
+    <meta property="twitter:description" content="台灣專業製造消防宣導品，提供創新錶型防身警報器、貓頭鷹警報器等安全產品">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "亞之騰有限公司",
+        "description": "專業製造消防宣導品、禮品、紀念品",
+        "url": "https://yourusername.github.io/fire-safety-products/",
+        "telephone": "+886-965-659-193",
+        "email": "chih629@yahoo.com.tw",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "TW",
+            "addressRegion": "Taiwan"
+        },
+        "sameAs": [
+            "https://line.me/ti/p/chih629"
+        ]
+    }
+    </script>
+    
+    <link rel="canonical" href="https://yourusername.github.io/fire-safety-products/">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Microsoft JhengHei', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #2c5aa0;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #2c5aa0;
+        }
+        
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+        
+        .btn {
+            padding: 12px 30px;
+            background: #ff6b6b;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .btn:hover {
+            background: #ff5252;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            color: #667eea;
+        }
+        
+        /* Products Section */
+        .products {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: #2c5aa0;
+            margin-bottom: 0.5rem;
+        }
+        
+        .section-title p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s;
+        }
+        
+        .product-card:hover::before {
+            left: 100%;
+        }
+        
+        .product-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+        
+        .product-card h3 {
+            font-size: 1.3rem;
+            color: #2c5aa0;
+            margin-bottom: 1rem;
+        }
+        
+        .product-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 4rem 0;
+            background: white;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-item {
+            text-align: center;
+            padding: 1.5rem;
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
+            background: #4ecdc4;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 4rem 0;
+            background: #2c5aa0;
+            color: white;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        
+        .contact-item {
+            padding: 1.5rem;
+        }
+        
+        .contact-item h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .contact-item p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-item a {
+            color: #4ecdc4;
+            text-decoration: none;
+        }
+        
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-menu {
+                display: flex;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">亞之騰有限公司</div>
+            <ul class="nav-links">
+                <li><a href="#home">首頁</a></li>
+                <li><a href="#products">商品</a></li>
+                <li><a href="#features">特色</a></li>
+                <li><a href="#contact">聯絡我們</a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>消防宣導品、禮品、紀念品 線上預覽</h1>
+                <p>專業製造創新安全產品，台灣設計品質保證<br>提供錶型防身警報器、貓頭鷹警報器等多樣化選擇</p>
+                <div class="cta-buttons">
+                    <a href="#products" class="btn">查看產品</a>
+                    <a href="#contact" class="btn btn-secondary">立即諮詢</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="products">
+            <div class="container">
+                <div class="section-title fade-in">
+                    <h2>主打產品</h2>
+                    <p>創新設計，實用安全，台灣製造品質保證</p>
+                </div>
+                
+                <div class="products-grid">
+                    <article class="product-card fade-in">
+                        <div class="product-icon">⌚</div>
+                        <h3>新產品-錶型 防身警報器</h3>
+                        <p>替換式錶帶，可頸掛，可結合手錶、定位器、感應卡、緊急藥品。台灣設計製造，時尚與安全完美結合。</p>
+                    </article>
+                    
+                    <article class="product-card fade-in">
+                        <div class="product-icon">🦉</div>
+                        <h3>貓頭鷹警報器暨數位學生悠遊卡</h3>
+                        <p>可愛造型結合實用功能，內建警報器與數位學生證功能，深受學校及家長喜愛。</p>
+                    </article>
+                    
+                    <article class="product-card fade-in">
+                        <div class="product-icon">🫁</div>
+                        <h3>CPR安妮造型節拍警報器(客製品)</h3>
+                        <p>專業CPR教學輔助工具，提供標準節拍指導，讓急救訓練更加有效且有趣。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <div class="section-title fade-in">
+                    <h2>產品特色</h2>
+                    <p>消防局宣導商品設計製造專家</p>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-item fade-in">
+                        <div class="feature-icon">🏭</div>
+                        <h4>台灣設計製造</h4>
+                        <p>在地設計生產，品質嚴格把關，提供最優質的產品與服務</p>
+                    </div>
+                    
+                    <div class="feature-item fade-in">
+                        <div class="feature-icon">💡</div>
+                        <h4>創新專利技術</h4>
+                        <p>擁有多項專利設計，不斷創新研發，提供獨特的安全產品解決方案</p>
+                    </div>
+                    
+                    <div class="feature-item fade-in">
+                        <div class="feature-icon">🎨</div>
+                        <h4>客製化設計</h4>
+                        <p>提供客製化設計服務，滿足不同單位的特殊需求與品牌識別</p>
+                    </div>
+                    
+                    <div class="feature-item fade-in">
+                        <div class="feature-icon">🚨</div>
+                        <h4>消防局認證</h4>
+                        <p>消防局宣導商品首選，符合安全規範，值得信賴的專業品牌</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="section-title fade-in">
+                    <h2 style="color: white;">聯絡我們</h2>
+                    <p style="color: #ccc;">歡迎來電洽詢價格與更多資訊，如欲大量購買，另有折扣價格</p>
+                </div>
+                
+                <div class="contact-grid">
+                    <div class="contact-item fade-in">
+                        <h3>📞 聯絡電話</h3>
+                        <p><a href="tel:+886965659193">0965-659-193</a></p>
+                        <p><a href="tel:+88628685349">02-8685-3499</a></p>
+                    </div>
+                    
+                    <div class="contact-item fade-in">
+                        <h3>📧 電子信箱</h3>
+                        <p><a href="mailto:chih629@yahoo.com.tw">chih629@yahoo.com.tw</a></p>
+                    </div>
+                    
+                    <div class="contact-item fade-in">
+                        <h3>💬 即時通訊</h3>
+                        <p>LineID: <a href="https://line.me/ti/p/chih629">chih629</a></p>
+                        <p>統一編號: 84154083</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 亞之騰有限公司. 版權所有 | 消防宣導品、禮品、紀念品專業製造商</p>
+            <p>台灣設計製造 | 消防局宣導商品首選品牌</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            navLinks.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                
+                // Close mobile menu after clicking
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add loading animation
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.3s ease';
+            
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = '#fff';
+                header.style.backdropFilter = 'none';
+            }
+        });
+
+        // Track user interactions for analytics (placeholder)
+        function trackEvent(action, label) {
+            // This would integrate with Google Analytics or other analytics services
+            console.log('Track event:', action, label);
+        }
+
+        // Add click tracking to CTA buttons
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                trackEvent('button_click', btn.textContent);
+            });
+        });
+
+        // Add contact link tracking
+        document.querySelectorAll('a[href^="tel:"], a[href^="mailto:"]').forEach(link => {
+            link.addEventListener('click', () => {
+                trackEvent('contact_click', link.getAttribute('href'));
+            });
+        });
+    </script>
+</body>
+</html>

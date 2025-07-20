@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://jayhsiao0629.github.io/oeoe119/sitemap.xml
-Host: jayhsiao0629.github.io
