@@ -1,0 +1,12 @@
+---
+layout: default
+---
+<article itemscope itemtype="https://schema.org/Product">
+  <h1 itemprop="name">{{ page.title }}</h1>
+  <img src="{{ page.image }}" alt="{{ page.title }}" itemprop="image">
+  <p itemprop="description">{{ page.description }}</p>
+  <ul>
+    <li>型號：<span itemprop="sku">{{ page.sku }}</span></li>
+    <li>價格：NT${{ page.price }}</li>
+  </ul>
+</article>

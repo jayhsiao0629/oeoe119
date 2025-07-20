@@ -1,0 +1,12 @@
+- title: "錶型防身警報器"
+  slug: "bracelet-alarm"
+  description: "替換式錶帶，可頸掛、手錶、定位器..."
+  image: "/assets/img/bracelet-01.jpg"
+  sku: "ATM-001"
+  price: 0  # 電洽
+- title: "貓頭鷹警報器 + 數位學生證"
+  slug: "owl-alarm-card"
+  description: "二合一警報器 + 學生證客製款"
+  image: "/assets/img/owl-01.jpg"
+  sku: "ATM-002"
+  price: 0
