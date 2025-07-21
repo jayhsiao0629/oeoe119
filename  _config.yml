@@ -1,0 +1,33 @@
+# 網站基本設定
+title: "亞之騰有限公司"
+description: "消防局宣導商品設計製造 - 防身警報器專業製造商"
+url: "https://jayhsiao0629.github.io"
+baseurl: "/oeoe119"
+
+# SEO 設定
+lang: zh-TW
+author: "亞之騰有限公司"
+keywords: "防身警報器,消防局宣導品,兒童安全,亞之騰"
+
+# Jekyll 設定
+markdown: kramdown
+highlighter: rouge
+permalink: /:categories/:title/
+
+# 插件
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# 排除檔案
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+
+# 集合設定
+collections:
+  products:
+    output: true
+    permalink: /products/:name/

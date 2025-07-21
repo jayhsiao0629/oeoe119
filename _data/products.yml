@@ -1,0 +1,31 @@
+categories:
+  - id: "alarm"
+    name: "防身警報器"
+    description: "消防局宣導認證商品"
+  
+  - id: "safety"
+    name: "兒童安全用品"
+    description: "專為兒童設計的安全防護商品"
+
+featured_products:
+  - id: "owl-alarm"
+    name: "貓頭鷹防身警報器"
+    category: "alarm"
+    price: 299
+    image: "/assets/images/products/owl-alarm.jpg"
+    features:
+      - "120分貝超大音量"
+      - "可愛造型設計"
+      - "消防局認證"
+    description: "專為學童設計的防身警報器，擁有消防局認證，120分貝超大音量，可愛貓頭鷹造型深受孩童喜愛。"
+    
+  - id: "penguin-alarm"
+    name: "企鵝防身警報器"
+    category: "alarm" 
+    price: 299
+    image: "/assets/images/products/penguin-alarm.jpg"
+    features:
+      - "120分貝警報音"
+      - "企鵝可愛造型"
+      - "消防局宣導認證"
+    description: "黑白企鵝造型防身警報器，同樣具備120分貝警報功能，是孩童安全的守護者。"
