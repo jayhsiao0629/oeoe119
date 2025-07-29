@@ -5,145 +5,70 @@
 @import "base";
 @import "components";
 
-// 主要樣式
-.hero {
-  background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
-  padding: 80px 0;
+// 額外的樣式
+.hero-section {
+  background: linear-gradient(135deg, #e8f5e8 0%, #f0f8f0 100%);
+  padding: 60px 0;
   
-  &-content {
-    max-width: 1200px;
-    margin: 0 auto;
+  .hero-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    gap: 40px;
     align-items: center;
-    padding: 0 20px;
     
     @media (max-width: 768px) {
       grid-template-columns: 1fr;
-      text-align: center;
+      gap: 30px;
     }
   }
   
-  &-text h1 {
-    font-size: 3rem;
-    color: $primary-color;
-    margin-bottom: 20px;
-    
-    @media (max-width: 768px) {
+  .hero-text {
+    h1 {
       font-size: 2.5rem;
+      color: $primary-color;
+      margin-bottom: 1rem;
+      font-weight: 700;
     }
-  }
-  
-  .lead {
-    font-size: 1.2rem;
-    color: #666;
-    margin-bottom: 10px;
-  }
-  
-  .highlight {
-    font-size: 1.5rem;
-    color: $accent-color;
-    font-weight: bold;
-    margin-bottom: 30px;
-  }
-  
-  &-buttons {
-    display: flex;
-    gap: 15px;
     
-    @media (max-width: 768px) {
-      justify-content: center;
+    p {
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 2rem;
+      line-height: 1.6;
     }
   }
   
-  &-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  .hero-image {
+    text-align: center;
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
   }
 }
 
-.featured-products {
-  padding: 80px 0;
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
+.cta-section {
+  background: $primary-color;
+  color: white;
+  padding: 40px 0;
+  text-align: center;
   
   h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    color: $primary-color;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+    font-size: 2rem;
   }
   
-  .products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 40px;
-  }
-  
-  .product-card {
-    background: white;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+  .cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
     
-    &:hover {
-      transform: translateY(-5px);
-    }
-    
-    img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-    }
-    
-    .product-info {
-      padding: 25px;
-      
-      h3 {
-        color: $primary-color;
-        font-size: 1.5rem;
-        margin-bottom: 10px;
-      }
-      
-      .price {
-        font-size: 1.3rem;
-        color: $accent-color;
-        font-weight: bold;
-        margin-bottom: 15px;
-      }
-      
-      .features {
-        list-style: none;
-        padding: 0;
-        margin-bottom: 15px;
-        
-        li {
-          background: #f0f8f0;
-          padding: 5px 10px;
-          margin-bottom: 5px;
-          border-radius: 5px;
-          font-size: 0.9rem;
-          
-          &:before {
-            content: "✓ ";
-            color: $success-color;
-            font-weight: bold;
-          }
-        }
-      }
-      
-      .description {
-        color: #666;
-        line-height: 1.6;
-      }
+    @media (max-width: 576px) {
+      flex-direction: column;
+      align-items: center;
     }
   }
 }

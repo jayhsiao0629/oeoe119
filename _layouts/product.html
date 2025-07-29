@@ -1,0 +1,112 @@
+---
+layout: default
+---
+
+<div class="product-page">
+  <div class="container">
+    <nav class="breadcrumb">
+      <a href="{{ '/' | relative_url }}">首頁</a>
+      <span class="separator">&gt;</span>
+      <a href="{{ '/products/' | relative_url }}">商品</a>
+      <span class="separator">&gt;</span>
+      <span class="current">{{ page.title }}</span>
+    </nav>
+    
+    <div class="product-content">
+      <div class="product-images">
+        <div class="main-image">
+          <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="product-main-img">
+        </div>
+        {% if page.gallery %}
+        <div class="image-gallery">
+          {% for image in page.gallery %}
+          <img src="{{ image | relative_url }}" alt="{{ page.title }}" class="gallery-thumb">
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+      
+      <div class="product-info">
+        <h1 class="product-title">{{ page.title }}</h1>
+        
+        {% if page.price %}
+        <div class="product-price">
+          <span class="price">NT$ {{ page.price }}</span>
+        </div>
+        {% endif %}
+        
+        <div class="product-description">
+          {{ content }}
+          {% if page.description %}
+          <p>{{ page.description }}</p>
+          {% endif %}
+        </div>
+        
+        {% if page.features %}
+        <div class="product-features">
+          <h3>產品特色</h3>
+          <ul class="features-list">
+            {% for feature in page.features %}
+            <li>{{ feature }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+        
+        <div class="product-actions">
+          <button class="btn btn-primary add-to-cart">加入購物車</button>
+          <button class="btn btn-secondary contact-us">立即詢問</button>
+        </div>
+        
+        <div class="product-meta">
+          <p><strong>分類：</strong>{{ page.category }}</p>
+          {% if page.sku %}<p><strong>商品編號：</strong>{{ page.sku }}</p>{% endif %}
+        </div>
+      </div>
+    </div>
+    
+    <div class="related-products">
+      <h2>相關商品</h2>
+      <div class="products-grid">
+        {% assign related_products = site.data.products.products | where: "category", page.category | limit: 3 %}
+        {% for product in related_products %}
+        {% unless product.id == page.product_id %}
+        <div class="product-card">
+          <a href="{{ '/products/' | append: product.id | append: '/' | relative_url }}">
+            <img src="{{ product.image | relative_url }}" alt="{{ product.name }}">
+            <h3>{{ product.name }}</h3>
+            <p class="price">NT$ {{ product.price }}</p>
+          </a>
+        </div>
+        {% endunless %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "{{ page.title }}",
+  "description": "{{ page.description | default: page.excerpt | strip_html }}",
+  "image": "{{ site.url }}{{ page.image }}",
+  {% if page.price %}
+  "offers": {
+    "@type": "Offer",
+    "price": "{{ page.price }}",
+    "priceCurrency": "TWD",
+    "availability": "https://schema.org/InStock",
+    "seller": {
+      "@type": "Organization", 
+      "name": "{{ site.data.company.name }}"
+    }
+  },
+  {% endif %}
+  "brand": {
+    "@type": "Brand",
+    "name": "{{ site.data.company.name }}"
+  }
+}
+</script>

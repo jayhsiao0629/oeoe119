@@ -1,15 +1,21 @@
 name: "亞之騰有限公司"
-description: "消防局2010宣導商品設計製造專業廠商"
-established: ""
+english_name: "Asia Teng Co., Ltd."
+description: "致力於消防局宣導商品設計製造"
+established: "2010"
+business_id: "84154083"
 
 contact:
-  phones:
-    - "0965-659-193"
-    - "02-8685-3499"
+  phone: "0965-659-193"
+  phone2: "02-8685-3499"
   email: "chih629@yahoo.com.tw"
   line_id: "chih629"
-  tax_id: "84154083"
+  address: "新北市樹林區"
+
+services:
+  - "消防宣導品設計"
+  - "消防宣導商品"
+  - "客製化宣導產品"
 
 certifications:
-  - name: "消防局宣導商品認證"
-    description: "通過消防局正式認證的防身警報器製造商"
+  - "消防局認證"
+  - "安全標準認證"

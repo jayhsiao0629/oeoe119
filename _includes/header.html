@@ -1,0 +1,32 @@
+<header class="site-header">
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-brand">
+        <a href="{{ '/' | relative_url }}" class="brand-link">
+          <h1>{{ site.data.company.name }}</h1>
+        </a>
+      </div>
+      
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#main-nav">
+        <span class="sr-only">切換導航</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <div class="navbar-collapse" id="main-nav">
+        <ul class="navbar-nav">
+          {% for item in site.data.navigation.main %}
+          <li class="nav-item">
+            <a href="{{ item.url | relative_url }}" class="nav-link{% if page.url == item.url or page.permalink == item.url or page.url == item.url | append: '/' or page.url == item.url | remove: '.html' | append: '/' or page.url == item.url | remove: '.html' %} active{% endif %}">
+              {{ item.name }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+        
+        
+      </div>
+    </div>
+  </nav>
+</header>

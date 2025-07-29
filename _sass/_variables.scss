@@ -1,0 +1,147 @@
+// 品牌顏色
+$primary-color: #4285f4;     // 主要藍色
+$secondary-color: #34a853;   // 輔助綠色
+$accent-color: #ea4335;      // 強調紅色
+$warning-color: #fbbc04;     // 警告黃色
+
+// 中性色調
+$white: #ffffff;
+$light-gray: #f8f9fa;
+$gray: #6c757d;
+$dark-gray: #495057;
+$black: #212529;
+
+// 文字顏色
+$text-primary: #2c3e50;
+$text-secondary: #6c757d;
+$text-muted: #adb5bd;
+$text-light: #ffffff;
+
+// 背景顏色
+$bg-primary: $primary-color;
+$bg-secondary: $secondary-color;
+$bg-light: #f8f9fa;
+$bg-white: #ffffff;
+$bg-dark: #343a40;
+
+// 邊框顏色
+$border-color: #dee2e6;
+$border-light: #e9ecef;
+$border-dark: #495057;
+
+// 陰影
+$shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+$shadow: 0 4px 6px rgba(0,0,0,0.1);
+$shadow-lg: 0 8px 25px rgba(0,0,0,0.15);
+$shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+
+// 字體
+$font-family-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", "PingFang TC", "Helvetica Neue", Arial, sans-serif;
+$font-family-serif: "Times New Roman", serif;
+$font-family-mono: SFMono-Regular, Monaco, Consolas, monospace;
+
+// 字體大小
+$font-size-xs: 0.75rem;    // 12px
+$font-size-sm: 0.875rem;   // 14px
+$font-size-base: 1rem;     // 16px
+$font-size-lg: 1.125rem;   // 18px
+$font-size-xl: 1.25rem;    // 20px
+$font-size-2xl: 1.5rem;    // 24px
+$font-size-3xl: 1.875rem;  // 30px
+$font-size-4xl: 2.25rem;   // 36px
+$font-size-5xl: 3rem;      // 48px
+
+// 字重
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+
+// 行高
+$line-height-tight: 1.25;
+$line-height-snug: 1.375;
+$line-height-normal: 1.5;
+$line-height-relaxed: 1.625;
+$line-height-loose: 2;
+
+// 邊距間距
+$spacing-xs: 0.25rem;   // 4px
+$spacing-sm: 0.5rem;    // 8px
+$spacing-md: 1rem;      // 16px
+$spacing-lg: 1.5rem;    // 24px
+$spacing-xl: 2rem;      // 32px
+$spacing-2xl: 3rem;     // 48px
+$spacing-3xl: 4rem;     // 64px
+$spacing-4xl: 6rem;     // 96px
+$spacing-5xl: 8rem;     // 128px
+
+// 邊框圓角
+$border-radius-sm: 4px;
+$border-radius: 8px;
+$border-radius-lg: 12px;
+$border-radius-xl: 16px;
+$border-radius-full: 50%;
+
+// 斷點
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1400px;
+
+// 容器最大寬度
+$container-max-width: 1200px;
+$container-padding: 20px;
+
+// Z-index 層級
+$z-index-dropdown: 1000;
+$z-index-sticky: 1020;
+$z-index-fixed: 1030;
+$z-index-modal-backdrop: 1040;
+$z-index-modal: 1050;
+$z-index-popover: 1060;
+$z-index-tooltip: 1070;
+
+// 動畫過渡
+$transition-base: all 0.3s ease;
+$transition-fast: all 0.15s ease-out;
+$transition-slow: all 0.6s ease;
+
+// 產品卡片樣式變數
+$card-bg: $white;
+$card-border: $border-light;
+$card-border-radius: $border-radius-lg;
+$card-padding: $spacing-lg;
+$card-shadow: $shadow;
+$card-shadow-hover: $shadow-lg;
+
+// 按鈕樣式變數
+$btn-padding-y: 12px;
+$btn-padding-x: 24px;
+$btn-font-size: $font-size-base;
+$btn-font-weight: $font-weight-semibold;
+$btn-border-radius: $border-radius;
+$btn-transition: $transition-base;
+
+// 表單樣式變數
+$input-padding-y: 12px;
+$input-padding-x: 16px;
+$input-font-size: $font-size-base;
+$input-border-color: $border-color;
+$input-border-radius: $border-radius;
+$input-focus-color: $primary-color;
+
+// 導航列變數
+$navbar-height: 70px;
+$navbar-bg: $white;
+$navbar-border: $border-light;
+$navbar-link-color: $text-primary;
+$navbar-link-hover: $primary-color;
+
+// 頁腳變數
+$footer-bg: $dark-gray;
+$footer-text: $white;
+$footer-link-color: $light-gray;
+$footer-padding: $spacing-3xl;

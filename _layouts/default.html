@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: 'zh-TW' }}">
+
 {% include head.html %}
-<body>
+
+<body class="{{ page.body_class }}">
   {% include header.html %}
   
-  <main class="main-content">
+  <main class="page-content" aria-label="Content">
     {{ content }}
   </main>
   
   {% include footer.html %}
 </body>
+
 </html>

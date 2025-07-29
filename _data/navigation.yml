@@ -1,17 +1,7 @@
 main:
-  - title: "首頁"
+  - name: "首頁"
     url: "/"
-  - title: "商品"
+  - name: "商品"
     url: "/products/"
-  - title: "關於我們"
-    url: "/about/"
-  - title: "聯絡我們"
-    url: "/contact/"
-
-buttons:
-  - title: "商品一覽"
-    url: "/products/"
-    class: "btn-primary"
-  - title: "專利一覽"
-    url: "/patents/"
-    class: "btn-secondary"
+  - name: "專利"
+    url: "/patent/"
