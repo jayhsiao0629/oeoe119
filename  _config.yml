@@ -1,8 +1,12 @@
 # Site settings
 title: "亞之騰有限公司 | 消防安全設備專業製造商"
 description: "亞之騰有限公司專注於消防局宣導商品設計製造，提供防身警報器等消防安全設備，守護您的安全。"
-baseurl: "oeoe119" # the subpath of your site, e.g. /blog
+baseurl: "/oeoe119" # the subpath of your site, e.g. /blog
 url: "https://jayhsiao0629.github.io" # 請替換為您的 GitHub Pages URL
+
+# Jekyll 路徑建議
+# baseurl 必須以斜線開頭（/oeoe119），local 跑 http://localhost:4000/oeoe119/
+# 所有資源路徑請用 {{ site.baseurl }} 變數
 author: "亞之騰有限公司"
 
 # SEO settings
