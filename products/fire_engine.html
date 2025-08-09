@@ -3,24 +3,24 @@ layout: default
 title: 消防車模型 - 亞之騰有限公司
 description: 消防車模型，適合消防教育與收藏。亞之騰有限公司專業消防安全產品。
 keywords: 消防車, 模型, 教育, 收藏, 亞之騰有限公司
-canonical_url: https://oeoe119.github.io/products/fire_engine/
 og_image: /assets/images/products/fire_engine/cover.jpg
+permalink: /products/fire_engine/
 ---
 
-<link rel="stylesheet" href="/assets/css/product-detail.css">
+<link rel="stylesheet" href="{{ '/assets/css/product-detail.css' | relative_url }}">
 
 <div class="container mt-4">
   <div class="breadcrumb-nav">
-      <a href="/">首頁</a> &gt; <a href="/products">商品</a> &gt; 消防車模型
+      <a href="{{ '/' | relative_url }}">首頁</a> &gt; <a href="{{ '/products/' | relative_url }}">商品</a> &gt; 消防車模型
   </div>
   <div class="row">
       <div class="col-6">
           <div class="product-gallery">
               <div class="main-image-wrapper">
-                  <img src="/assets/images/products/fire_engine/cover.jpg" alt="消防車模型" class="main-image" id="mainImage">
+                  <img src="{{ '/assets/images/products/fire_engine/cover.jpg' | relative_url }}" alt="消防車模型" class="main-image" id="mainImage">
               </div>
               <div class="thumbnail-container">
-                  <img src="/assets/images/products/fire_engine/cover.jpg" alt="產品圖1" class="thumbnail active" onclick="changeImage(this)">
+                  <img src="{{ '/assets/images/products/fire_engine/cover.jpg' | relative_url }}" alt="產品圖1" class="thumbnail active" onclick="changeImage(this)">
               </div>
           </div>
       </div>

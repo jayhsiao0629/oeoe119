@@ -3,24 +3,24 @@ layout: default
 title: 消防主題便利貼 - 亞之騰有限公司
 description: 消防主題便利貼，實用又具宣導效果。亞之騰有限公司專業消防安全產品。
 keywords: 便利貼, 消防主題, 宣導品, 亞之騰有限公司
-canonical_url: https://oeoe119.github.io/products/sticky_notes/
 og_image: /assets/images/products/sticky_notes/cover.jpg
+permalink: /products/sticky_notes/
 ---
 
-<link rel="stylesheet" href="/assets/css/product-detail.css">
+<link rel="stylesheet" href="{{ '/assets/css/product-detail.css' | relative_url }}">
 
 <div class="container mt-4">
   <div class="breadcrumb-nav">
-      <a href="/">首頁</a> &gt; <a href="/products">商品</a> &gt; 消防主題便利貼
+      <a href="{{ '/' | relative_url }}">首頁</a> &gt; <a href="{{ '/products/' | relative_url }}">商品</a> &gt; 消防主題便利貼
   </div>
   <div class="row">
       <div class="col-6">
           <div class="product-gallery">
               <div class="main-image-wrapper">
-                  <img src="/assets/images/products/sticky_notes/cover.jpg" alt="消防主題便利貼" class="main-image" id="mainImage">
+                  <img src="{{ '/assets/images/products/sticky_notes/cover.jpg' | relative_url }}" alt="消防主題便利貼" class="main-image" id="mainImage">
               </div>
               <div class="thumbnail-container">
-                  <img src="/assets/images/products/sticky_notes/cover.jpg" alt="產品圖1" class="thumbnail active" onclick="changeImage(this)">
+                  <img src="{{ '/assets/images/products/sticky_notes/cover.jpg' | relative_url }}" alt="產品圖1" class="thumbnail active" onclick="changeImage(this)">
               </div>
           </div>
       </div>

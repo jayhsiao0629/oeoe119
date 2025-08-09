@@ -3,24 +3,24 @@ layout: default
 title: 樂高消防積木 - 亞之騰有限公司
 description: 樂高消防積木，寓教於樂，提升消防安全意識。亞之騰有限公司專業消防安全產品。
 keywords: 樂高, 消防積木, 教育, 亞之騰有限公司
-canonical_url: https://oeoe119.github.io/products/lego/
 og_image: /assets/images/products/lego/cover.jpg
+permalink: /products/lego/
 ---
 
-<link rel="stylesheet" href="/assets/css/product-detail.css">
+<link rel="stylesheet" href="{{ '/assets/css/product-detail.css' | relative_url }}">
 
 <div class="container mt-4">
   <div class="breadcrumb-nav">
-      <a href="/">首頁</a> &gt; <a href="/products">商品</a> &gt; 樂高消防積木
+      <a href="{{ '/' | relative_url }}">首頁</a> &gt; <a href="{{ '/products/' | relative_url }}">商品</a> &gt; 樂高消防積木
   </div>
   <div class="row">
       <div class="col-6">
           <div class="product-gallery">
               <div class="main-image-wrapper">
-                  <img src="/assets/images/products/lego/cover.jpg" alt="樂高消防積木" class="main-image" id="mainImage">
+                  <img src="{{ '/assets/images/products/lego/cover.jpg' | relative_url }}" alt="樂高消防積木" class="main-image" id="mainImage">
               </div>
               <div class="thumbnail-container">
-                  <img src="/assets/images/products/lego/cover.jpg" alt="產品圖1" class="thumbnail active" onclick="changeImage(this)">
+                  <img src="{{ '/assets/images/products/lego/cover.jpg' | relative_url }}" alt="產品圖1" class="thumbnail active" onclick="changeImage(this)">
               </div>
           </div>
       </div>
