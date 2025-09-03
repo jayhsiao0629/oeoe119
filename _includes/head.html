@@ -10,9 +10,18 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="zh_TW">
   <meta property="og:site_name" content="{{ site.title }}">
+  {% if page.og_image or page.image %}
+  <meta property="og:image" content="{{ (page.og_image | default: page.image) | absolute_url }}">
+  {% endif %}
+  {% if page.url %}
+  <link rel="alternate" hreflang="zh-TW" href="{{ page.url | absolute_url }}">
+  {% endif %}
   
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
+  {% if page.og_image or page.image %}
+  <meta name="twitter:image" content="{{ (page.og_image | default: page.image) | absolute_url }}">
+  {% endif %}
   
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -21,17 +30,16 @@
     "@type": "Organization",
     "name": "{{ site.data.company.name }}",
     "description": "{{ site.description }}",
-    "url": "{{ site.url }}",
-    "telephone": "{{ site.phone }}",
-    "email": "{{ site.email }}",
+    "url": "{{ site.url }}{{ site.baseurl }}",
+    "telephone": "{{ site.data.company.contact.phone }}",
+    "email": "{{ site.data.company.contact.email }}",
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "TW",
-      "addressLocality": "新北市",
-      "addressRegion": "板橋區"
+      "addressLocality": "{{ site.data.company.contact.address | default: '新北市' }}"
     },
     "sameAs": [
-      {% if site.facebook_url != "" %}"{{ site.facebook_url }}",{% endif %}
+      {% if site.facebook_url != "" %}"{{ site.facebook_url }}"{% endif %}{% if site.facebook_url != "" and site.youtube_url != "" %},{% endif %}
       {% if site.youtube_url != "" %}"{{ site.youtube_url }}"{% endif %}
     ]
   }

@@ -19,6 +19,35 @@ og_image: /assets/images/products-overview.jpg
   </div>
 </section>
 
+<!-- 結構化資料：產品清單 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "消防宣導品產品清單",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "url": "{{ '/products/alarm/' | absolute_url }}",
+      "name": "貓頭鷹造型警報器暨數位學生悠遊卡"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "url": "{{ '/products/cpr/' | absolute_url }}",
+      "name": "CPR安妮造型節拍警報器(客製品)"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "url": "{{ '/products/watch/' | absolute_url }}",
+      "name": "錶型防身警報器"
+    }
+  ]
+}
+</script>
+
 <section class="products-section py-5">
   <div class="container">
     <div class="products-filter mb-4">

@@ -3,7 +3,6 @@ layout: default
 title: 聯絡我們 | 亞之騰有限公司
 description: 聯絡亞之騰有限公司，我們專業提供消防安全產品設計製造服務。歡迎洽詢防身警報器、數位學生證等創新產品。
 keywords: 聯絡我們, 消防安全產品諮詢, 亞之騰有限公司, 產品詢價, 客服聯絡
-canonical_url: https://jayhsiao0629.github.io/contact/
 og_image: /assets/images/contact-banner.jpg
 ---
 
@@ -221,7 +220,7 @@ og_image: /assets/images/contact-banner.jpg
   "@type": "ContactPage",
   "name": "聯絡我們 - 亞之騰有限公司",
   "description": "聯絡亞之騰有限公司，專業消防安全產品設計製造服務",
-  "url": "https://jayhsiao0629.github.io/contact/",
+  "url": "{{ page.url | absolute_url }}",
   "mainEntity": {
     "@type": "Organization",
     "name": "亞之騰有限公司",
@@ -239,5 +238,35 @@ og_image: /assets/images/contact-banner.jpg
       }
     }
   }
+}
+</script>
+
+<!-- FAQ 結構化資料 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "如何獲得產品報價？",
+      "acceptedAnswer": {"@type": "Answer", "text": "您可以透過電話、電子郵件或線上表單聯絡我們，提供具體需求，我們將在24小時內提供詳細報價。"}
+    },
+    {
+      "@type": "Question",
+      "name": "產品是否提供客製化服務？",
+      "acceptedAnswer": {"@type": "Answer", "text": "是的，我們提供客製化設計服務，包含功能、外觀與包裝調整。"}
+    },
+    {
+      "@type": "Question",
+      "name": "交貨時間需要多久？",
+      "acceptedAnswer": {"@type": "Answer", "text": "標準產品通常7-14個工作天；客製化產品依複雜度約2-4週。"}
+    },
+    {
+      "@type": "Question",
+      "name": "是否提供售後服務？",
+      "acceptedAnswer": {"@type": "Answer", "text": "我們提供完整售後，包括保固、技術支援與使用指導。"}
+    }
+  ]
 }
 </script>

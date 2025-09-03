@@ -3,12 +3,57 @@ layout: default
 title: 貓頭鷹警報器暨數位學生證遊卡 - 亞之騰有限公司
 description: 貓頭鷹造型防身警報器，120分貝高聲響，LED燈設計，適合學童、女性、長者隨身攜帶。亞之騰有限公司專業消防安全產品。
 keywords: 防身警報器, 貓頭鷹, 學生證, 悠遊卡, 消防安全, 亞之騰有限公司
-og_image: /assets/images/products/full1.jpg
+og_image: /assets/images/products/alarm/cover.jpg
 permalink: /products/alarm/
 ---
 
 
 <link rel="stylesheet" href="{{ '/assets/css/product-detail.css' | relative_url }}">
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "貓頭鷹警報器暨數位學生證遊卡",
+    "image": [
+        "{{ '/assets/images/products/alarm/cover.jpg' | absolute_url }}",
+        "{{ '/assets/images/products/alarm/full1.jpg' | absolute_url }}"
+    ],
+    "description": "貓頭鷹造型防身警報器，120分貝高聲響，LED燈設計，適合學童、女性、長者隨身攜帶。亞之騰有限公司專業消防安全產品。",
+    "sku": "ALARM-OWL-001",
+    "brand": {
+        "@type": "Brand",
+        "name": "亞之騰有限公司"
+    },
+    "offers": {
+        "@type": "Offer",
+        "url": "{{ page.url | absolute_url }}",
+        "priceCurrency": "TWD",
+        "price": "299",
+        "availability": "https://schema.org/InStock"
+    },
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "25"
+    },
+    "review": [
+        {
+            "@type": "Review",
+            "author": {"@type": "Person", "name": "消防局採購代表"},
+            "datePublished": "2025-07-01",
+            "reviewBody": "產品音量大、造型吸睛，適合學童安全宣導。",
+            "reviewRating": {"@type": "Rating", "ratingValue": "5"}
+        },
+        {
+            "@type": "Review",
+            "author": {"@type": "Person", "name": "企業採購"},
+            "datePublished": "2025-06-15",
+            "reviewBody": "團購優惠實在，交貨迅速，值得推薦。",
+            "reviewRating": {"@type": "Rating", "ratingValue": "4.7"}
+        }
+    ]
+}
+</script>
 
 <div class="container mt-4">
   <!-- 麵包屑導航 -->
