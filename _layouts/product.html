@@ -15,12 +15,12 @@ layout: default
     <div class="product-content">
       <div class="product-images">
         <div class="main-image">
-          <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="product-main-img">
+          <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="product-main-img" decoding="async">
         </div>
         {% if page.gallery %}
         <div class="image-gallery">
           {% for image in page.gallery %}
-          <img src="{{ image | relative_url }}" alt="{{ page.title }}" class="gallery-thumb">
+          <img src="{{ image | relative_url }}" alt="{{ page.title }}" class="gallery-thumb" loading="lazy" decoding="async">
           {% endfor %}
         </div>
         {% endif %}
@@ -73,7 +73,7 @@ layout: default
         {% unless product.id == page.product_id %}
         <div class="product-card">
           <a href="{{ '/products/' | append: product.id | append: '/' | relative_url }}">
-            <img src="{{ product.image | relative_url }}" alt="{{ product.name }}">
+            <img src="{{ product.image | relative_url }}" alt="{{ product.name }}" loading="lazy" decoding="async">
             <h3>{{ product.name }}</h3>
             <p class="price">NT$ {{ product.price }}</p>
           </a>

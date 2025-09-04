@@ -48,16 +48,16 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="{{ '/assets/images/favicon.png' | relative_url }}">
   
+  {% if page.lcp_image %}
+  <!-- Preload LCP image to improve LCP -->
+  <link rel="preload" as="image" href="{{ page.lcp_image | relative_url }}"{% if page.lcp_srcset %} imagesrcset="{{ page.lcp_srcset }}"{% endif %}{% if page.lcp_sizes %} imagesizes="{{ page.lcp_sizes }}"{% endif %} fetchpriority="high">
+  {% endif %}
+  
   <!-- Stylesheets -->
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
   
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
-  
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Note: Removed external Google Fonts and Font Awesome to avoid render-blocking
+       and reduce unused CSS. Site uses system fonts defined in SCSS. -->
   
   {% if jekyll.environment == 'production' %}
   <!-- Google Analytics (請替換為您的 GA ID) -->

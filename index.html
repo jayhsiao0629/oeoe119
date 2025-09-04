@@ -5,13 +5,25 @@ description: 【破萬件銷售】亞之騰有限公司為全台領先消防宣�
 keywords: 消防宣導品, 防身警報器, 消防局懇購, CPR教學模型, 消防樂高, 專利認證, 亞之騰有限公司, 學童安全, 消防帽, 消防宣導物品
 og_image: /assets/images/products/alarm/cover.jpg
 schema_type: Organization
+lcp_image: /assets/images/products/alarm/cover-800.jpg
+lcp_srcset: "/assets/images/products/alarm/cover-400.jpg 400w, /assets/images/products/alarm/cover-800.jpg 800w, /assets/images/products/alarm/cover.jpg 1522w"
+lcp_sizes: "(max-width: 600px) 90vw, (max-width: 1024px) 60vw, 800px"
 ---
 
 <section class="hero-section">
   <div class="container">
     <div class="hero-content">
       <div class="hero-banner">
-        <img src="{{ '/assets/images/products/alarm/cover.jpg' | relative_url }}" alt="防身警報器 - 保護學童安全的創新產品" class="hero-image">
+        <img
+          src="{{ '/assets/images/products/alarm/cover-800.jpg' | relative_url }}"
+          srcset="{{ '/assets/images/products/alarm/cover-400.jpg' | relative_url }} 400w, {{ '/assets/images/products/alarm/cover-800.jpg' | relative_url }} 800w, {{ '/assets/images/products/alarm/cover.jpg' | relative_url }} 1522w"
+          sizes="(max-width: 600px) 90vw, (max-width: 1024px) 60vw, 800px"
+          alt="防身警報器 - 保護學童安全的創新產品"
+          class="hero-image"
+          width="1522"
+          height="1076"
+          fetchpriority="high"
+          decoding="async">
       </div>
       
       <div class="hero-text">

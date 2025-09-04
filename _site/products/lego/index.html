@@ -68,16 +68,13 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/assets/images/favicon.png">
   
+  
+  
   <!-- Stylesheets -->
   <link rel="stylesheet" href="/assets/css/main.css">
   
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
-  
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Note: Removed external Google Fonts and Font Awesome to avoid render-blocking
+       and reduce unused CSS. Site uses system fonts defined in SCSS. -->
   
   
 </head>
@@ -94,7 +91,6 @@
       </div>
       
       <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#main-nav">
-        <span class="sr-only">切換導航</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -517,23 +513,23 @@ document.querySelector('.btn-add-cart').addEventListener('click', function() {
         <h3>聯絡我們</h3>
         <div class="contact-details">
             <div class="contact-item">
-                <i class="fas fa-phone" aria-hidden="true"></i>
+                <span class="contact-icon" aria-hidden="true">📞</span>
                 <span>0965-659-193</span>
             </div>
             <div class="contact-item">
-                <i class="fas fa-phone" aria-hidden="true"></i>
+                <span class="contact-icon" aria-hidden="true">📞</span>
                 <span>02-8685-3499</span>
             </div>
             <div class="contact-item">
-                <i class="fas fa-envelope" aria-hidden="true"></i>
+                <span class="contact-icon" aria-hidden="true">✉️</span>
                 <a href="mailto:chih629@yahoo.com.tw">chih629@yahoo.com.tw</a>
             </div>
             <div class="contact-item">
-                <i class="fab fa-line" aria-hidden="true"></i>
+                <span class="contact-icon" aria-hidden="true">🟩</span>
                 <span>LineID: chih629</span>
             </div>
             <div class="contact-item">
-                <i class="fas fa-building" aria-hidden="true"></i>
+                <span class="contact-icon" aria-hidden="true">🏢</span>
                 <span>統一編號: 84154083</span>
             </div>
             </div>
@@ -587,6 +583,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 </script>
+
 </body>
 
 </html>

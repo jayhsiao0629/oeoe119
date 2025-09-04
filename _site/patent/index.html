@@ -64,16 +64,13 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/assets/images/favicon.png">
   
+  
+  
   <!-- Stylesheets -->
   <link rel="stylesheet" href="/assets/css/main.css">
   
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
-  
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Note: Removed external Google Fonts and Font Awesome to avoid render-blocking
+       and reduce unused CSS. Site uses system fonts defined in SCSS. -->
   
   
 </head>
@@ -90,7 +87,6 @@
       </div>
       
       <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#main-nav">
-        <span class="sr-only">切換導航</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -139,12 +135,12 @@
                 每項專利都經過嚴格審查，代表我們在消防安全領域的技術領先地位<br>
                 <span style="color: #e74c3c; font-weight: bold;">★ 專利技術保障產品品質，為您提供最有力的保證</span></p>
                 <a href="#patents" class="btn btn-lg px-4 py-3" style="background: linear-gradient(135deg, #3498db, #2980b9); color: #fff; border: none; margin-right: 15px;">
-                    <i class="fas fa-arrow-down me-2"></i>
+                    <span aria-hidden="true">⬇️</span>
                     查看所有專利
                 </a>
 
                 <a href="/products/" class="btn btn-lg px-4 py-3" style="background: linear-gradient(135deg, #e74c3c, #c0392b); color: #fff; border: none;">
-                    <i class="fas fa-shopping-cart me-2"></i>
+                    <span aria-hidden="true">🛒</span>
                     查看產品
                 </a>
             </div>
@@ -214,11 +210,11 @@
                     </p>
                     <div class="patent-meta">
                         <div class="meta-item">
-                            <i class="fas fa-calendar"></i>
+                            <span aria-hidden="true">📅</span>
                             <span>核准年度：2024</span>
                         </div>
                         <div class="meta-item">
-                            <i class="fas fa-user"></i>
+                            <span aria-hidden="true">👤</span>
                             <span>發明人：蕭智仁</span>
                         </div>
                     </div>
@@ -289,7 +285,7 @@
                     </div>
                     <div class="patent-actions">
                         <a href="/assets/images/patents/CPR%E7%AF%80%E6%8B%8D%E6%8F%90%E7%A4%BA%E8%BC%94%E5%8A%A9%E8%A3%9D%E7%BD%AE.pdf" class="btn-download" download>
-                            <i class="fas fa-download"></i>
+                            <span aria-hidden="true">⬇️</span>
                             下載 PDF
                         </a>
                         
@@ -313,17 +309,17 @@
                     </p>
                     <div class="patent-meta">
                         <div class="meta-item">
-                            <i class="fas fa-calendar"></i>
+                            <span aria-hidden="true">📅</span>
                             <span>核准年度：2021</span>
                         </div>
                         <div class="meta-item">
-                            <i class="fas fa-user"></i>
+                            <span aria-hidden="true">👤</span>
                             <span>發明人：蕭智仁</span>
                         </div>
                     </div>
                     <div class="patent-actions">
                         <a href="/assets/images/patents/%E6%99%BA%E8%83%BD%E8%AD%A6%E5%A0%B1%E5%99%A8.pdf" class="btn-download" download>
-                            <i class="fas fa-download"></i>
+                            <span aria-hidden="true">⬇️</span>
                             下載 PDF
                         </a>
                     </div>
@@ -346,17 +342,17 @@
                     </p>
                     <div class="patent-meta">
                         <div class="meta-item">
-                            <i class="fas fa-calendar"></i>
+                            <span aria-hidden="true">📅</span>
                             <span>核准年度：2021</span>
                         </div>
                         <div class="meta-item">
-                            <i class="fas fa-user"></i>
+                            <span aria-hidden="true">👤</span>
                             <span>發明人：蕭智仁</span>
                         </div>
                     </div>
                     <div class="patent-actions">
                         <a href="/assets/images/patents/%E8%AD%A6%E5%A0%B1%E5%99%A8.pdf" class="btn-download" download>
-                            <i class="fas fa-download"></i>
+                            <span aria-hidden="true">⬇️</span>
                             下載 PDF
                         </a>
                     </div>
@@ -379,23 +375,23 @@
         <h3>聯絡我們</h3>
         <div class="contact-details">
             <div class="contact-item">
-                <i class="fas fa-phone" aria-hidden="true"></i>
+                <span class="contact-icon" aria-hidden="true">📞</span>
                 <span>0965-659-193</span>
             </div>
             <div class="contact-item">
-                <i class="fas fa-phone" aria-hidden="true"></i>
+                <span class="contact-icon" aria-hidden="true">📞</span>
                 <span>02-8685-3499</span>
             </div>
             <div class="contact-item">
-                <i class="fas fa-envelope" aria-hidden="true"></i>
+                <span class="contact-icon" aria-hidden="true">✉️</span>
                 <a href="mailto:chih629@yahoo.com.tw">chih629@yahoo.com.tw</a>
             </div>
             <div class="contact-item">
-                <i class="fab fa-line" aria-hidden="true"></i>
+                <span class="contact-icon" aria-hidden="true">🟩</span>
                 <span>LineID: chih629</span>
             </div>
             <div class="contact-item">
-                <i class="fas fa-building" aria-hidden="true"></i>
+                <span class="contact-icon" aria-hidden="true">🏢</span>
                 <span>統一編號: 84154083</span>
             </div>
             </div>
@@ -449,6 +445,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 </script>
+
 </body>
 
 </html>
