@@ -66,7 +66,7 @@
   </script>
   
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" href="/assets/images/favicon/favicon.jpeg">
   
   
   
@@ -179,7 +179,7 @@
               <label><strong>購買數量:</strong></label>
               <div class="quantity-controls">
                   <input type="number" value="1" min="1" class="qty-input" id="quantity">
-                  <button class="btn-add-cart">加入購物車</button>
+                  <button class="btn-add-cart open-contact">立即洽詢</button>
               </div>
           </div>
           <div class="features mb-3">
@@ -304,7 +304,7 @@
   </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-<script>function changeImage(thumbnail){document.querySelectorAll('.thumbnail').forEach(thumb=>{thumb.classList.remove('active');});thumbnail.classList.add('active');const mainImage=document.getElementById('mainImage');mainImage.src=thumbnail.src.replace('80x80','600x500');}const mainImage=document.getElementById('mainImage');const mainImageWrapper=document.querySelector('.main-image-wrapper');let isZoomed=false;mainImageWrapper.addEventListener('mousemove',function(e){if(!isZoomed)return;const rect=mainImage.getBoundingClientRect();const x=e.clientX-rect.left;const y=e.clientY-rect.top;const xPercent=(x/rect.width)*100;const yPercent=(y/rect.height)*100;mainImage.style.transformOrigin=`${xPercent}% ${yPercent}%`;});mainImageWrapper.addEventListener('mouseenter',function(e){mainImage.classList.add('zoomed');isZoomed=true;});mainImageWrapper.addEventListener('mouseleave',function(e){mainImage.classList.remove('zoomed');mainImage.style.transformOrigin='';isZoomed=false;});mainImageWrapper.addEventListener('click',function(e){if(isZoomed){mainImage.classList.remove('zoomed');mainImage.style.transformOrigin='';isZoomed=false;}else{mainImage.classList.add('zoomed');isZoomed=true;}});document.querySelector('.btn-add-cart').addEventListener('click',function(){const quantity=document.getElementById('quantity').value;alert(`已將 ${quantity} 件商品加入購物車！`);});</script>
+<script>function changeImage(thumbnail){document.querySelectorAll('.thumbnail').forEach(thumb=>{thumb.classList.remove('active');});thumbnail.classList.add('active');const mainImage=document.getElementById('mainImage');mainImage.src=thumbnail.src.replace('80x80','600x500');}const mainImage=document.getElementById('mainImage');const mainImageWrapper=document.querySelector('.main-image-wrapper');let isZoomed=false;mainImageWrapper.addEventListener('mousemove',function(e){if(!isZoomed)return;const rect=mainImage.getBoundingClientRect();const x=e.clientX-rect.left;const y=e.clientY-rect.top;const xPercent=(x/rect.width)*100;const yPercent=(y/rect.height)*100;mainImage.style.transformOrigin=`${xPercent}% ${yPercent}%`;});mainImageWrapper.addEventListener('mouseenter',function(e){mainImage.classList.add('zoomed');isZoomed=true;});mainImageWrapper.addEventListener('mouseleave',function(e){mainImage.classList.remove('zoomed');mainImage.style.transformOrigin='';isZoomed=false;});mainImageWrapper.addEventListener('click',function(e){if(isZoomed){mainImage.classList.remove('zoomed');mainImage.style.transformOrigin='';isZoomed=false;}else{mainImage.classList.add('zoomed');isZoomed=true;}});</script>
 
   </main>
   
@@ -372,6 +372,28 @@
   </div>
 </footer>
 
+<!-- Contact Modal -->
+<div class="modal" id="contactModal" aria-hidden="true" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title">立即洽詢</div>
+        <button class="btn-close" type="button" aria-label="Close">×</button>
+      </div>
+      <div class="modal-body">
+        <p>請透過以下方式與我們聯絡：</p>
+        <p><a href="tel:0965-659-193">📞 0965-659-193</a></p>
+        <p><a href="mailto:chih629@yahoo.com.tw">✉️ chih629@yahoo.com.tw</a></p>
+        <p><a href="https://line.me/ti/p/chih629" target="_blank" rel="noopener">🟩 加 Line 詢問 (@chih629)</a></p>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-primary" href="tel:0965-659-193">立即撥打</a>
+        <a class="btn btn-secondary" href="https://line.me/ti/p/chih629" target="_blank" rel="noopener">加 Line 詢問</a>
+      </div>
+    </div>
+  </div>
+ </div>
+
 <script>
 // 手機導航切換
 document.addEventListener('DOMContentLoaded', function() {
@@ -383,6 +405,31 @@ document.addEventListener('DOMContentLoaded', function() {
       nav.classList.toggle('show');
     });
   }
+  
+  // 立即洽詢：開啟聯絡方式彈窗
+  const modal = document.getElementById('contactModal');
+  const closeBtn = modal ? modal.querySelector('.btn-close') : null;
+
+  function openContactModal(e){
+    if(e) e.preventDefault();
+    if(!modal) return;
+    modal.classList.add('show');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeContactModal(){
+    if(!modal) return;
+    modal.classList.remove('show');
+    document.body.style.overflow = '';
+  }
+
+  ['.open-contact', '.contact-us', '.btn-add-cart', '.add-to-cart'].forEach(sel => {
+    document.querySelectorAll(sel).forEach(el => {
+      el.addEventListener('click', openContactModal);
+    });
+  });
+
+  if (closeBtn) closeBtn.addEventListener('click', closeContactModal);
+  if (modal) modal.addEventListener('click', function(e){ if(e.target === modal) closeContactModal(); });
 });
 </script>
 

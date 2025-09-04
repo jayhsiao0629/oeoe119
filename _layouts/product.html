@@ -54,8 +54,14 @@ layout: default
         {% endif %}
         
         <div class="product-actions">
-          <button class="btn btn-primary add-to-cart">加入購物車</button>
-          <button class="btn btn-secondary contact-us">立即詢問</button>
+          <button class="btn btn-primary open-contact">立即洽詢</button>
+          <a class="btn btn-secondary" href="https://line.me/ti/p/{{ site.data.company.contact.line_id }}" target="_blank" rel="noopener">加 Line 詢問</a>
+        </div>
+
+        <div class="contact-quick">
+          <a href="tel:{{ site.data.company.contact.phone }}">📞 {{ site.data.company.contact.phone }}</a>
+          <span class="sep">或</span>
+          <a href="{{ '/contact/' | relative_url }}">更多聯絡方式</a>
         </div>
         
         <div class="product-meta">
