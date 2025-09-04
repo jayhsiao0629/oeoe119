@@ -17,6 +17,11 @@ body {
   background-color: #fff;
 }
 
+/* 防止行動裝置出現水平捲動條 */
+html, body {
+  overflow-x: hidden;
+}
+
 /* 響應式圖片 */
 img {
   max-width: 100%;

@@ -27,7 +27,7 @@
 
   .navbar {
     display: flex;
-    align-items: right;
+    align-items: center;
     padding: 1rem 0;
     width: 100%;
 
@@ -45,6 +45,13 @@
       text-decoration: none;
       margin-right: 2rem;
       flex-shrink: 0;
+
+      h1 {
+        margin: 0;
+        font-size: 2rem;
+        line-height: 1.2;
+        font-weight: $font-weight-bold;
+      }
 
       &:hover {
         color: darken($primary-color, 10%);
@@ -92,43 +99,19 @@
       margin-left: 2rem;
     }
 
-    .navbar-toggler {
-      border: none;
+    /* 行動版切換按鈕（配合 .navbar-toggle/.icon-bar 標記） */
+    .navbar-toggle {
+      display: none;
+      background: transparent;
+      border: 0;
       padding: 0.25rem 0.5rem;
-
-      .navbar-toggler-icon {
-        background-image: none;
-        width: 1.5rem;
-        height: 1rem;
-        position: relative;
-
-        &::before,
-        &::after,
-        span {
-          display: block;
-          height: 2px;
-          width: 100%;
-          background-color: $text-primary;
-          position: absolute;
-          left: 0;
-          transition: $transition-base;
-        }
-
-        &::before {
-          content: '';
-          top: 0;
-        }
-
-        span {
-          top: 50%;
-          transform: translateY(-50%);
-        }
-
-        &::after {
-          content: '';
-          bottom: 0;
-        }
-      }
+    }
+    .navbar-toggle .icon-bar {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: $text-primary;
+      margin: 4px 0;
     }
   }
 }
@@ -461,6 +444,17 @@
 
 /* Footer */
 .site-footer {
+  /* 服務項目清單：在全局重置移除 padding 後恢復縮排，避免圓點被裁切 */
+  ul {
+    list-style: disc;
+    list-style-position: outside;
+    padding-left: 1.25rem; /* 20px 對齊容器邊距 */
+    margin: 0;
+  }
+  li {
+    margin-bottom: 0.5rem;
+  }
+  
   background-color: $footer-bg;
   color: $footer-text;
   padding: $footer-padding 0 $spacing-xl 0;
@@ -588,6 +582,45 @@
   .hero-section {
     padding: $spacing-3xl 0;
     min-height: auto;
+  }
+
+  /* Header：行動版導覽列 */
+  .site-header {
+    .navbar {
+      position: relative;
+
+      .navbar-toggle { display: block; }
+
+      .navbar-brand h1 { font-size: 2rem; }
+
+      .navbar-collapse {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: $white;
+        box-shadow: $shadow;
+        padding: $spacing-sm $container-padding;
+      }
+      .navbar-collapse.show { display: block; }
+
+      .navbar-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        margin-top: $spacing-sm;
+      }
+      .navbar-nav .nav-item { width: 100%; }
+      .navbar-nav .nav-link {
+        display: block;
+        width: 100%;
+        padding: 0.75rem 0;
+        white-space: nowrap; /* 防止兩字中文被拆成直排 */
+      }
+    }
+
+    
   }
 
   .section-header {
