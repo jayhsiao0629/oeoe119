@@ -1,4 +1,9 @@
-{% if page.disable_default_product_jsonld != true %}
+{%- comment -%}
+Only emit Product structured data when a concrete offer (price) exists.
+This avoids Google Search Console errors: "Missing offers, review, or aggregateRating".
+Pages without public pricing (custom quote items) should not output Product JSON-LD.
+{%- endcomment -%}
+{% if page.disable_default_product_jsonld != true and page.price %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -18,15 +23,14 @@
   "sku": "{{ page.sku }}",
   {% endif %}
   "brand": { "@type": "Brand", "name": "{{ site.data.company.name }}" },
-  {% if page.price %}
   "offers": {
     "@type": "Offer",
     "url": "{{ page.url | absolute_url }}",
     "priceCurrency": "{{ page.priceCurrency | default: 'TWD' }}",
     "price": "{{ page.price }}",
-    "availability": "{{ page.availability | default: 'https://schema.org/InStock' }}"
+    "availability": "{{ page.availability | default: 'https://schema.org/InStock' }}",
+    "itemCondition": "https://schema.org/NewCondition"
   }
-  {% endif %}
 }
 </script>
 {% endif %}

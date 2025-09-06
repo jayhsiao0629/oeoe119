@@ -91,6 +91,7 @@ layout: default
   </div>
 </div>
 
+{% if page.price %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -98,21 +99,20 @@ layout: default
   "name": "{{ page.title }}",
   "description": "{{ page.description | default: page.excerpt | strip_html }}",
   "image": "{{ site.url }}{{ page.image }}",
-  {% if page.price %}
+  "brand": {
+    "@type": "Brand",
+    "name": "{{ site.data.company.name }}"
+  },
   "offers": {
     "@type": "Offer",
     "price": "{{ page.price }}",
     "priceCurrency": "TWD",
     "availability": "https://schema.org/InStock",
     "seller": {
-      "@type": "Organization", 
+      "@type": "Organization",
       "name": "{{ site.data.company.name }}"
     }
-  },
-  {% endif %}
-  "brand": {
-    "@type": "Brand",
-    "name": "{{ site.data.company.name }}"
   }
 }
 </script>
+{% endif %}
