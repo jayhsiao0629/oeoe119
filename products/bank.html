@@ -1,7 +1,7 @@
 ---
 layout: default
-title: 滅火器造型存錢筒｜消防宣導品批發｜企業活動・學校教育｜亞之騰有限公司
-description: 滅火器造型存錢筒，教育趣味兼具，適合企業活動贈品、學校防災教育與社區宣導。亞之騰有限公司提供消防宣導品批發，支援客製化與快速交貨。
+title: 滅火器造型存錢筒｜消防宣導品 批發・客製・快速出貨｜企業活動・學校教育｜亞之騰有限公司
+description: 滅火器造型存錢筒，教育趣味兼具，適合企業活動贈品、學校防災教育與社區宣導。亞之騰有限公司提供消防宣導品批發，支援客製化與快速交貨。適合消防局/學校/企業活動，支援客製LOGO、起訂量彈性、快速出貨，提供正式報價。
 keywords: 滅火器造型存錢筒,存錢筒, 消防造型, 兒童, 教育, 亞之騰有限公司
 og_image: /assets/images/products/bank/單個滅火器.jpg
 permalink: /products/bank/
@@ -23,7 +23,7 @@ availability: https://schema.org/InStock
       <div class="col-6">
           <div class="product-gallery">
               <div class="main-image-wrapper">
-                  <img src="{{ '/assets/images/products/bank/單個滅火器.jpg' | relative_url }}" alt="消防造型存錢筒" class="main-image" id="mainImage">
+                  <img src="{{ '/assets/images/products/bank/單個滅火器.jpg' | relative_url }}" alt="滅火器造型存錢筒 消防宣導品 客製LOGO 快速出貨" class="main-image" id="mainImage">
               </div>
               <div class="thumbnail-container">
                   <img src="{{ '/assets/images/products/bank/單個滅火器.jpg' | relative_url }}" alt="單個滅火器" class="thumbnail active" onclick="changeImage(this)">
@@ -36,7 +36,7 @@ availability: https://schema.org/InStock
 
       <!-- 右側產品資訊 -->
       <div class="col-6">
-          <h1 class="product-title">滅火器造型存錢筒</h1>
+          <h1 class="product-title">滅火器造型存錢筒｜批發・客製・快速出貨</h1>
           <div class="price-section mb-4">
               <span class="price">NT$99</span>
               <span class="original-price">NT$199</span>
@@ -139,5 +139,6 @@ availability: https://schema.org/InStock
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 <script>function changeImage(thumbnail){document.querySelectorAll('.thumbnail').forEach(thumb=>{thumb.classList.remove('active');});thumbnail.classList.add('active');const mainImage=document.getElementById('mainImage');mainImage.src=thumbnail.src.replace('80x80','600x500');}const mainImage=document.getElementById('mainImage');const mainImageWrapper=document.querySelector('.main-image-wrapper');let isZoomed=false;mainImageWrapper.addEventListener('mousemove',function(e){if(!isZoomed)return;const rect=mainImage.getBoundingClientRect();const x=e.clientX-rect.left;const y=e.clientY-rect.top;const xPercent=(x/rect.width)*100;const yPercent=(y/rect.height)*100;mainImage.style.transformOrigin=`${xPercent}% ${yPercent}%`;});mainImageWrapper.addEventListener('mouseenter',function(e){mainImage.classList.add('zoomed');isZoomed=true;});mainImageWrapper.addEventListener('mouseleave',function(e){mainImage.classList.remove('zoomed');mainImage.style.transformOrigin='';isZoomed=false;});mainImageWrapper.addEventListener('click',function(e){if(isZoomed){mainImage.classList.remove('zoomed');mainImage.style.transformOrigin='';isZoomed=false;}else{mainImage.classList.add('zoomed');isZoomed=true;}});</script>
+{% include related-occasions.html %}
 {% include jsonld-product.html %}
 {% include jsonld-breadcrumb.html %}
