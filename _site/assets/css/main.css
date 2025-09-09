@@ -181,7 +181,7 @@ p { margin-bottom: 1rem; line-height: 1.8; }
 .site-header .navbar .navbar-toggle .icon-bar { display: block; width: 24px; height: 2px; background-color: #2c3e50; margin: 4px 0; }
 
 /* Hero Section */
-.hero-section { background: linear-gradient(135deg, rgba(66, 133, 244, 0.1) 0%, rgba(52, 168, 83, 0.1) 100%); padding: 6rem 0; min-height: 80vh; display: flex; align-items: center; }
+.hero-section { background: linear-gradient(135deg, rgba(66, 133, 244, 0.1) 0%, rgba(52, 168, 83, 0.1) 100%); padding: 6rem 0; min-height: 80vh; display: flex; align-items: center; /* LINE button icon styling */ }
 .hero-section .hero-content { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
 @media (max-width: 768px) { .hero-section .hero-content { grid-template-columns: 1fr; text-align: center; } }
 .hero-section .hero-image { border-radius: 12px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); transition: transform 0.3s ease; }
@@ -191,6 +191,8 @@ p { margin-bottom: 1rem; line-height: 1.8; }
 .hero-section .hero-subtitle { font-size: 1.25rem; color: #6c757d; margin-bottom: 2rem; line-height: 1.625; }
 .hero-section .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
 @media (max-width: 576px) { .hero-section .hero-buttons { flex-direction: column; } }
+.hero-section .btn-line { display: inline-flex; align-items: center; /* 垂直置中 */ justify-content: center; /* 水平置中 */ text-align: center; gap: 8px; }
+.hero-section .btn-line .icon-line { display: inline-block; width: 20px; height: 20px; }
 
 /* Product Cards */
 .product-card { background-color: #ffffff; border: 1px solid #e9ecef; border-radius: 12px; padding: 0; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column; }
@@ -248,17 +250,28 @@ p { margin-bottom: 1rem; line-height: 1.8; }
 .page-header .page-title .lead { font-size: 1.125rem; color: #6c757d; }
 
 /* Footer */
-.site-footer { /* 服務項目清單：在全局重置移除 padding 後恢復縮排，避免圓點被裁切 */ background-color: #495057; color: #ffffff; padding: 4rem 0 2rem 0; }
+.site-footer { /* 服務項目清單：在全局重置移除 padding 後恢復縮排，避免圓點被裁切 */ background-color: #495057; color: #ffffff; padding: 4rem 0 2rem 0; /* Footer 內一般連結顏色 */ /* Footer CTA */ /* 清單與法務連結樣式 */ /* 移除誤置於 .modal 內的 footer 清單樣式（已上移至 .site-footer 作用域） */ /* 單色線條 icon 與條目排版 */ }
 .site-footer ul { list-style: disc; list-style-position: outside; padding-left: 1.25rem; /* 20px 對齊容器邊距 */ margin: 0; }
 .site-footer li { margin-bottom: 0.5rem; }
+.site-footer a { color: #f8f9fa; }
+.site-footer a:hover { color: #ffffff; }
 .site-footer .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem; }
-.site-footer .footer-section h4 { font-size: 1.125rem; font-weight: 700; margin-bottom: 1.5rem; color: #ffffff; }
+.site-footer .footer-cta { display: flex; align-items: center; justify-content: space-between; gap: 1rem; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; }
+@media (max-width: 768px) { .site-footer .footer-cta { flex-direction: column; text-align: center; align-items: stretch; } }
+.site-footer .footer-cta .footer-cta-text { color: #ffffff; margin: 0; font-weight: 600; }
+.site-footer .footer-cta .footer-cta-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; }
+.site-footer .footer-section h3 { font-size: 1.25rem; /* 標題較大一階 */ font-weight: 700; margin-bottom: 1.5rem; color: #4285f4; /* 與底色對比更明顯 */ }
+.site-footer .footer-section p, .site-footer .footer-section li, .site-footer .footer-section a { font-size: 0.875rem; /* 內文字體縮一階 */ line-height: 1.625; }
 .site-footer .footer-section .contact-info { list-style: none; padding: 0; }
 .site-footer .footer-section .contact-info li { margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
 .site-footer .footer-section .contact-info li .contact-icon { color: #4285f4; font-size: 1.125rem; }
 .site-footer .footer-section .contact-info li a { color: #f8f9fa; text-decoration: none; }
 .site-footer .footer-section .contact-info li a:hover { color: #ffffff; }
 .site-footer .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 1.5rem; text-align: center; color: #adb5bd; font-size: 0.875rem; }
+.site-footer .footer-bottom a { color: #f8f9fa; text-decoration: none; }
+.site-footer .footer-bottom a:hover { color: #ffffff; text-decoration: underline; }
+.site-footer .footer-section .icon { width: 20px; height: 20px; margin-right: 0.25rem; vertical-align: middle; }
+.site-footer .trust-stats li { display: flex; align-items: center; gap: 0.25rem; }
 
 /* 模態視窗 */
 .modal { display: none; position: fixed; inset: 0; /* 加深遮罩，突顯彈窗 */ background-color: rgba(0, 0, 0, 0.6); padding: 1.5rem; }
@@ -268,6 +281,8 @@ p { margin-bottom: 1rem; line-height: 1.8; }
 .modal .modal-header .modal-title { font-size: 1.25rem; font-weight: 700; color: #2c3e50; margin: 0; }
 .modal .modal-header .btn-close { background: none; border: none; cursor: pointer; font-size: 1.25rem; line-height: 1; opacity: 0.6; color: #6c757d; margin-left: auto; padding: 0; width: 1.75rem; height: 1.75rem; border-radius: 9999px; display: inline-flex; align-items: center; justify-content: center; }
 .modal .modal-header .btn-close:hover { opacity: 1; background: rgba(33, 37, 41, 0.05); }
+.modal .footer-section.quick-links ul, .modal .footer-section.trust .legal-links { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.5rem; }
+.modal .footer-section.trust .trust-stats { list-style: none; padding: 0; margin: 0 0 1rem 0; display: grid; gap: 0.25rem; }
 .modal .modal-body { padding: 1.5rem; }
 .modal .modal-body .form-control { border: 1px solid #dee2e6; border-radius: 8px; padding: 12px 16px; font-size: 1rem; transition: all 0.3s ease; }
 .modal .modal-body .form-control:focus { border-color: #4285f4; box-shadow: 0 0 0 0.2rem rgba(66, 133, 244, 0.25); outline: 0; }

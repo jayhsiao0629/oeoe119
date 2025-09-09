@@ -165,15 +165,29 @@
     line-height: $line-height-relaxed;
   }
 
-  .hero-buttons {
-    display: flex;
-    gap: $spacing-md;
-    flex-wrap: wrap;
+.hero-buttons {
+  display: flex;
+  gap: $spacing-md;
+  flex-wrap: wrap;
 
-    @media (max-width: $breakpoint-sm) {
-      flex-direction: column;
-    }
+  @media (max-width: $breakpoint-sm) {
+    flex-direction: column;
   }
+}
+
+/* LINE button icon styling */
+.btn-line {
+  display: inline-flex;
+  align-items: center;       /* 垂直置中 */
+  justify-content: center;   /* 水平置中 */
+  text-align: center;
+  gap: 8px;
+}
+.btn-line .icon-line {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
 }
 
 /* Product Cards */
@@ -459,6 +473,10 @@
   color: $footer-text;
   padding: $footer-padding 0 $spacing-xl 0;
 
+  /* Footer 內一般連結顏色 */
+  a { color: $footer-link-color; }
+  a:hover { color: $white; }
+
   .footer-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -466,12 +484,49 @@
     margin-bottom: $spacing-xl;
   }
 
+  /* Footer CTA */
+  .footer-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $spacing-md;
+    background: rgba($white, 0.04);
+    border: 1px solid rgba($white, 0.08);
+    border-radius: $border-radius-lg;
+    padding: $spacing-lg;
+    margin-bottom: $spacing-xl;
+
+    @media (max-width: $breakpoint-md) {
+      flex-direction: column;
+      text-align: center;
+      align-items: stretch;
+    }
+
+    .footer-cta-text {
+      color: $white;
+      margin: 0;
+      font-weight: $font-weight-semibold;
+    }
+
+    .footer-cta-actions {
+      display: flex;
+      gap: $spacing-sm;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
   .footer-section {
-    h4 {
-      font-size: $font-size-lg;
+    h3 {
+      font-size: $font-size-xl;       /* 標題較大一階 */
       font-weight: $font-weight-bold;
       margin-bottom: $spacing-lg;
-      color: $white;
+      color: $primary-color;          /* 與底色對比更明顯 */
+    }
+
+    p, li, a {
+      font-size: $font-size-sm;       /* 內文字體縮一階 */
+      line-height: $line-height-relaxed;
     }
 
     .contact-info {
@@ -507,6 +562,25 @@
     text-align: center;
     color: $text-muted;
     font-size: $font-size-sm;
+    a { color: $footer-link-color; text-decoration: none; }
+    a:hover { color: $white; text-decoration: underline; }
+  }
+
+  /* 清單與法務連結樣式 */
+  /* 移除誤置於 .modal 內的 footer 清單樣式（已上移至 .site-footer 作用域） */
+
+  /* 單色線條 icon 與條目排版 */
+  .footer-section .icon {
+    width: 20px;
+    height: 20px;
+    margin-right: $spacing-xs;
+    vertical-align: middle;
+  }
+
+  .trust-stats li {
+    display: flex;
+    align-items: center;
+    gap: $spacing-xs;
   }
 }
 
@@ -567,6 +641,23 @@
         background: rgba($black, 0.05);
       }
     }
+  }
+
+  .footer-section.quick-links ul,
+  .footer-section.trust .legal-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: $spacing-sm;
+  }
+
+  .footer-section.trust .trust-stats {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 $spacing-md 0;
+    display: grid;
+    gap: $spacing-xs;
   }
 
   .modal-body {
