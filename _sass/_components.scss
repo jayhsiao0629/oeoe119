@@ -165,6 +165,27 @@
     line-height: $line-height-relaxed;
   }
 
+  /* Hero slider */
+  .hero-banner { position: relative; }
+  .hero-slider { position: relative; }
+  .slides { position: relative; overflow: hidden; }
+  .slide { position: absolute; inset: 0; opacity: 0; transition: opacity .5s ease; }
+  .slide.is-active { position: relative; opacity: 1; }
+
+  .slider-btn {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: rgba(0,0,0,.35); color: #fff; border: 0; border-radius: 9999px;
+    width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center;
+    cursor: pointer; z-index: 2; transition: background .2s ease;
+  }
+  .slider-btn:hover { background: rgba(0,0,0,.5); }
+  .slider-prev { left: 8px; }
+  .slider-next { right: 8px; }
+
+  .slider-dots { display: flex; gap: 8px; position: absolute; left: 50%; transform: translateX(-50%); bottom: 10px; z-index: 2; }
+  .dot { width: 10px; height: 10px; border-radius: 9999px; background: rgba(0,0,0,.25); border: 0; padding: 0; cursor: pointer; }
+  .dot.is-active { background: $primary-color; }
+
 .hero-buttons {
   display: flex;
   gap: $spacing-md;

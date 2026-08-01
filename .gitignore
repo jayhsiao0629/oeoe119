@@ -1,2 +1,4 @@
 .github/
 /vendor/bundle
+_site/
+.DS_Store
