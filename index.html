@@ -3,10 +3,10 @@ layout: default
 title: 消防宣導品批發｜消防局指定・學校教育・企業活動｜亞之騰有限公司
 description: 亞之騰有限公司專營消防宣導品批發，包含防身警報器、CPR 教學用品、消防造型贈品等。多年政府機關與學校合作經驗，支援企業活動與客製化設計，快速交貨，適合政府採購、教育推廣與企業贈品。
 keywords: 消防宣導品, 防身警報器, 消防局懇購, CPR教學模型, 消防樂高, 專利認證, 亞之騰有限公司, 學童安全, 消防帽, 消防宣導物品
-og_image: /assets/images/products/alarm/cover.jpg
+og_image: /assets/images/multi_emergency_kit.jpg
 schema_type: Organization
-lcp_image: /assets/images/products/alarm/cover-800.jpg
-lcp_srcset: "/assets/images/products/alarm/cover-400.jpg 400w, /assets/images/products/alarm/cover-800.jpg 800w, /assets/images/products/alarm/cover.jpg 1522w"
+lcp_image: /assets/images/multi_emergency_kit.jpg
+lcp_srcset: "/assets/images/multi_emergency_kit.jpg 800w"
 lcp_sizes: "(max-width: 600px) 90vw, (max-width: 1024px) 60vw, 800px"
 ---
 
@@ -14,16 +14,33 @@ lcp_sizes: "(max-width: 600px) 90vw, (max-width: 1024px) 60vw, 800px"
   <div class="container">
     <div class="hero-content">
       <div class="hero-banner">
-        <img
-          src="{{ '/assets/images/products/alarm/cover-800.jpg' | relative_url }}"
-          srcset="{{ '/assets/images/products/alarm/cover-400.jpg' | relative_url }} 400w, {{ '/assets/images/products/alarm/cover-800.jpg' | relative_url }} 800w, {{ '/assets/images/products/alarm/cover.jpg' | relative_url }} 1522w"
-          sizes="(max-width: 600px) 90vw, (max-width: 1024px) 60vw, 800px"
-          alt="防身警報器 - 保護學童安全的創新產品"
-          class="hero-image"
-          width="1522"
-          height="1076"
-          fetchpriority="high"
-          decoding="async">
+        <div class="hero-slider" aria-roledescription="carousel" aria-label="精選宣導品" role="region">
+          <button class="slider-btn slider-prev" aria-label="上一張" type="button">&#10094;</button>
+          <button class="slider-btn slider-next" aria-label="下一張" type="button">&#10095;</button>
+
+          <div class="slides" aria-live="polite">
+            <div class="slide is-active">
+              <img
+                src="{{ '/assets/images/multi_emergency_kit.jpg' | relative_url }}"
+                alt="多功能緊急救援套件"
+                class="hero-image"
+                fetchpriority="high"
+                decoding="async">
+            </div>
+            <div class="slide">
+              <img
+                src="{{ '/assets/images/professorshowing_emergency_kit.jpg' | relative_url }}"
+                alt="專業人員示範緊急救援套件使用方式"
+                class="hero-image"
+                decoding="async">
+            </div>
+          </div>
+
+          <div class="slider-dots" role="tablist" aria-label="切換圖片">
+            <button class="dot is-active" role="tab" aria-selected="true" aria-controls="slide-1" tabindex="0"></button>
+            <button class="dot" role="tab" aria-selected="false" aria-controls="slide-2" tabindex="-1"></button>
+          </div>
+        </div>
       </div>
       
       <div class="hero-text">
@@ -45,7 +62,6 @@ lcp_sizes: "(max-width: 600px) 90vw, (max-width: 1024px) 60vw, 800px"
     </div>
   </div>
 </section>
-
 
 
 <section class="features-section bg-white py-5">
@@ -156,4 +172,44 @@ lcp_sizes: "(max-width: 600px) 90vw, (max-width: 1024px) 60vw, 800px"
     ]
   }
 }
+</script>
+
+<!-- Hero Slider Script (vanilla) -->
+<script>
+  (function(){
+    const slider = document.querySelector('.hero-slider');
+    if (!slider) return;
+    const slides = Array.from(slider.querySelectorAll('.slide'));
+    const dots = Array.from(slider.querySelectorAll('.dot'));
+    const prev = slider.querySelector('.slider-prev');
+    const next = slider.querySelector('.slider-next');
+    let idx = 0;
+    let timer = null;
+    const DURATION = 1500;
+
+    function show(i){
+      idx = (i + slides.length) % slides.length;
+      slides.forEach((s, n)=> s.classList.toggle('is-active', n === idx));
+      dots.forEach((d, n)=>{
+        const active = n === idx;
+        d.classList.toggle('is-active', active);
+        d.setAttribute('aria-selected', active ? 'true' : 'false');
+        d.tabIndex = active ? 0 : -1;
+      });
+    }
+    function nextSlide(){ show(idx + 1); }
+    function prevSlide(){ show(idx - 1); }
+    function start(){ stop(); timer = setInterval(nextSlide, DURATION); }
+    function stop(){ if (timer) { clearInterval(timer); timer = null; } }
+
+    next.addEventListener('click', ()=>{ nextSlide(); start(); });
+    prev.addEventListener('click', ()=>{ prevSlide(); start(); });
+    dots.forEach((d, n)=> d.addEventListener('click', ()=>{ show(n); start(); }));
+    slider.addEventListener('mouseenter', stop);
+    slider.addEventListener('mouseleave', start);
+    document.addEventListener('visibilitychange', ()=>{ document.hidden ? stop() : start(); });
+
+    // Kick off
+    start();
+  })();
 </script>
