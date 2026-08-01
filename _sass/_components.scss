@@ -168,9 +168,28 @@
   /* Hero slider */
   .hero-banner { position: relative; }
   .hero-slider { position: relative; }
-  .slides { position: relative; overflow: hidden; }
-  .slide { position: absolute; inset: 0; opacity: 0; transition: opacity .5s ease; }
-  .slide.is-active { position: relative; opacity: 1; }
+  .slides { overflow: hidden; }
+
+  /* 非 active slide 完全隱藏 */
+  .slide { display: none; }
+
+  /* active slide 顯示，加入淡入動畫 */
+  .slide.is-active {
+    display: block;
+    animation: fadeIn .6s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  .slide img {
+    width: 100%;
+    display: block;
+    border-radius: $border-radius-lg;
+    box-shadow: $shadow-xl;
+  }
 
   .slider-btn {
     position: absolute; top: 50%; transform: translateY(-50%);
