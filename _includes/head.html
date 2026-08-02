@@ -5,6 +5,9 @@
   
   <!-- SEO Tags -->
   {% seo %}
+  {% if page.robots %}
+  <meta name="robots" content="{{ page.robots }}">
+  {% endif %}
   
   <!-- Open Graph -->
   <meta property="og:type" content="website">
