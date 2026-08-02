@@ -1,12 +1,8 @@
 # Site settings
 title: "消防宣導品批發｜亞之騰有限公司"
 description: "亞之騰有限公司專營消防宣導品批發，多年政府機關、消防局、學校合作經驗，支援企業活動宣導與客製化設計，快速交貨，適合政府採購、教育推廣與企業贈品。"
-baseurl: "" # 使用自訂網域根目錄，若部署於子路徑請調整
-url: "https://oeoe119.com.tw" # 站點主要網域（對應 CNAME）
-
-# Jekyll 路徑建議
-# baseurl 必須以斜線開頭（/oeoe119），local 跑 http://localhost:4000/oeoe119/
-# 所有資源路徑請用 {{ site.baseurl }} 變數
+baseurl: ""
+url: "https://oeoe119.com.tw"
 author: "亞之騰有限公司"
 
 # SEO settings
@@ -21,9 +17,22 @@ email: "chih629@yahoo.com.tw"
 line_id: "chih629"
 company_id: "84154083"
 
-# Social media (if applicable)
+# Social media
 facebook_url: ""
 youtube_url: ""
+
+# ─────────────────────────────────────────────
+# Google 工具設定（只需在這裡填入，不用碰 HTML）
+# ─────────────────────────────────────────────
+
+# Google Analytics 4
+# 前往 https://analytics.google.com/ 取得評估 ID（格式：G-XXXXXXXXXX）
+google_analytics: ""  # 例：G-ABC123DEF4
+
+# Google Search Console 驗證
+# 前往 https://search.google.com/search-console/
+# 選「HTML 標記」驗證方式，把 content="..." 裡面的值貼在這裡
+google_site_verification: ""  # 例：abc123xyz789
 
 # Build settings
 markdown: kramdown

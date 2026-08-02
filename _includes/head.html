@@ -59,14 +59,19 @@
   <!-- Note: Removed external Google Fonts and Font Awesome to avoid render-blocking
        and reduce unused CSS. Site uses system fonts defined in SCSS. -->
   
-  {% if jekyll.environment == 'production' %}
-  <!-- Google Analytics (請替換為您的 GA ID) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <!-- Google Search Console 驗證（在 _config.yml 設定 google_site_verification） -->
+  {% if site.google_site_verification %}
+  <meta name="google-site-verification" content="{{ site.google_site_verification }}">
+  {% endif %}
+
+  <!-- Google Analytics 4（在 _config.yml 設定 google_analytics: G-XXXXXXXXXX） -->
+  {% if site.google_analytics %}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'GA_MEASUREMENT_ID');
+    gtag('config', '{{ site.google_analytics }}');
   </script>
   {% endif %}
 </head>
